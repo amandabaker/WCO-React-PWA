@@ -1,0 +1,14 @@
+#mainContent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: env(titlebar-area-height, var(--fallback-title-bar-height));
+  bottom: 0;
+  overflow-y: scroll;
+}
+
+.overflowingDiv {
+  height: 200%;
+  margin: 25px;
+}

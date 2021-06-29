@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Titlebar from './Titlebar';
+import MainContent from './MainContent';
 
 function App() {
+  registerServiceWorker();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Titlebar></Titlebar>
+      <MainContent></MainContent>
     </div>
   );
+}
+
+const registerServiceWorker = async () => {
+  try {
+    await navigator.serviceWorker.register('./sw.js', { scope: '/'});
+    console.log('Service worker registered');
+  } catch (e) {
+    console.log(`Registration failed: ${e}`);
+  }
 }
 
 export default App;

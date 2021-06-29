@@ -1,0 +1,45 @@
+.Titlebar {
+  position: absolute;
+  top: env(titlebar-area-y, 0);
+  height: env(titlebar-area-height, var(--fallback-title-bar-height));
+  width: 100%;
+  background-color: var(--theme-color);
+}
+
+.leftContainer {
+  position: absolute;
+  top: env(titlebar-area-y, 0);
+  display: flex;
+  user-select: none;
+  height: 100%;
+  left: env(titlebar-area-x, 0);
+  width: env(titlebar-area-width, 100%);
+
+  color: #FFFFFF;
+  font-weight: bold;
+  text-align: center;
+
+  /* cut off UI so you know that it would flow under the overlay */
+  overflow: hidden;
+}
+
+.leftContainer > span {
+  margin: auto;
+  padding: 0px 16px 0px 16px;
+}
+
+.leftContainer > input {
+  flex: 1;
+  margin: 8px 8px 8px 0;
+  border-radius: 5px;
+  border: none;
+  padding: 8px;
+}
+
+.draggable {
+  -webkit-app-region: drag;
+}
+
+.nonDraggable {
+  -webkit-app-region: no-drag;
+}
