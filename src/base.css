@@ -1,4 +1,5 @@
 :root {
   --fallback-title-bar-height: 40px;
   --theme-color: #123456;
+  --title-foreground-color: white;
 }
